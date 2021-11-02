@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:12.5-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: courses
+      POSTGRES_PASSWORD: courses
+      POSTGRES_DB: kotlinblog
+    restart: always
+    command: ["postgres", "-c", "log_statement=all", "-c", "log_destination=stderr"]
